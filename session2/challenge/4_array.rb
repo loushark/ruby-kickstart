@@ -7,3 +7,12 @@
 # get_squares [25, 4, 9, 6, 50, 16, 5] # => [4, 5]
 
 # This time you will have to define the method, it's called: get_squares
+def get_squares(numbers)
+  num =[]
+  numbers.sort.each do |n|
+    if numbers.include? n*n
+      num << n
+    end
+  end
+  num
+end
