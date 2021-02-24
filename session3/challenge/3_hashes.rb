@@ -6,3 +6,12 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+def word_count(str)
+  count = {}
+  count.default = 0
+  str.downcase.split(" ").each { |word|
+    count[word] +=1
+  }
+  count
+end
