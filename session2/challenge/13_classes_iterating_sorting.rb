@@ -69,14 +69,14 @@ class User
   attr_accessor 'username', 'blogs'
 
   def initialize(username)
-    self.username = username
-    self.blogs = []
+    @username = username
+    @blogs = []
   end
 
   def add_blog(date, text)
-    added = Blog.new(date, self, text)
+    added = Blog.new(date, @user, text)
     blogs << added
-    self.blogs = blogs.sort_by { |blog| blog.date }.reverse
+    @blogs = blogs.sort_by { |blog| blog.date }.reverse
     added
   end
 
@@ -86,9 +86,9 @@ class Blog
   attr_accessor 'date', 'user', 'text'
 
   def initialize(date, user, text)
-    self.date = date
-    self.user = user
-    self.text = text
+    @date = date
+    @user = user
+    @text = text
   end
 
   def entry
