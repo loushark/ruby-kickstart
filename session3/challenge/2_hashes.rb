@@ -8,3 +8,17 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase(num)
+  hash = {}
+  number = (1..num)
+
+  number.each { |i|
+    if i.odd?
+      arr = Array.new(i) { |x| x + 1}
+        even = arr.select {|y| y.even?}
+        hash[i] = even
+    end
+  }
+
+  p hash
+end
